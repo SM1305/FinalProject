@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/CCD/3D_Tests.unity
+  isLoaded: 1
+  isActive: 1
