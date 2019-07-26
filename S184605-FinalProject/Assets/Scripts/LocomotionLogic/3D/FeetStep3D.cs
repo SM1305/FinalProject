@@ -153,7 +153,7 @@ public class FeetStep3D : MonoBehaviour
     {
         Debug.Log(transform.name + " - IS PIVOTING SPINE");
 
-        spine.transform.RotateAround(footCollisionPoint, spine.transform.right, legLocomotionScript.proportionalStrideLength * 5 * Time.deltaTime);
+        spine.transform.RotateAround(transform.position, spine.transform.right, legLocomotionScript.proportionalStrideLength * 50 * Time.deltaTime);
         spine.transform.rotation = Quaternion.identity;
     }
 
@@ -169,8 +169,6 @@ public class FeetStep3D : MonoBehaviour
             if (groundHit.transform.name == "Ground")
             {
                 footCollisionPoint = groundHit.point;
-                Debug.Log("move fkn cube");
-                footcolposcube.transform.position = footCollisionPoint;
                 Debug.Log("raycast hit 'Ground'");
 
                 if (isGrounded == false)
