@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ *  script is respondible for placement on the 'next step' location
+ *  contains logic for defining the next foot to step after transition from standstill
+ */
+
+          
 public class LegLocomotionPlacement3D : MonoBehaviour
 {
     public enum LocomotionState { StandingStill, Walking };
@@ -38,13 +45,6 @@ public class LegLocomotionPlacement3D : MonoBehaviour
 
         leftLegFootStates = leftLegEndEffector.GetComponent<FootStates>();
         rightLegFootStates = rightLegEndEffector.GetComponent<FootStates>();
-
-
-
-        //will need specific right and left hip joints to project from and to be rotated over respective feet inverted pendulum
-        //rotate child hip joint and parent (biped root) around foot
-
-        //rotate projected path to match hip joint.fotward direction
     }
 
 
@@ -59,11 +59,13 @@ public class LegLocomotionPlacement3D : MonoBehaviour
         LocomotionLogic();
     }
 
+    //ahead position of 'next target' - changes based on user input
     void PositionRaycastAhead()
     {
         verticalRay.transform.position = hips.transform.position + hips.transform.forward * (proportionalStrideLength * 5);
     }
 
+    //places 'next step'
     void RaycastFootPlacement()
     {
         RaycastHit hit;
@@ -78,6 +80,7 @@ public class LegLocomotionPlacement3D : MonoBehaviour
         }
     }
 
+    //takes user input, converts to scale and applies to biped model
     void ProportionalStrideInput()
     {
         proportionalStrideLength = Mathf.InverseLerp(0.0f, userInput.maxVelocity, userInput.velocity);
@@ -93,6 +96,7 @@ public class LegLocomotionPlacement3D : MonoBehaviour
         }
     }
 
+    //determines which foot takes the first step after transitioning from standing still
     void LocomotionLogic()
     {
         switch (locomotionState)

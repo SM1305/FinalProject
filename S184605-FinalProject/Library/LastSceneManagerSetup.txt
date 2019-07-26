@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/CCD/3D_Tests.unity
+- path: Assets/Scenes/CCD/3D_ProceduralWalk.unity
   isLoaded: 1
   isActive: 1

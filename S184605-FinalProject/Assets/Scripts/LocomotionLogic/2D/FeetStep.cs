@@ -57,6 +57,7 @@ public class FeetStep : MonoBehaviour
         Step();
     }
 
+    //gait locomotion phases - used as the logic cycle for driving the biped walk 
     void Step()
     {
         switch (footStates.footState)
@@ -94,6 +95,7 @@ public class FeetStep : MonoBehaviour
         }
     }
 
+    //positions control points of bezier curve to be followed
     void PositionBezierPoints()
     {
         Vector3 cp0Pos;
@@ -139,6 +141,7 @@ public class FeetStep : MonoBehaviour
     //    cp1Pos.x = cp1Pos.x--;
     //}
 
+    //uses inverted pendulum principle to move the hips forward over the support foot
     void PivotHipsAround()
     {
         Debug.Log(transform.name + " - IS PIVOTING SPINE");

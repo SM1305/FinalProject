@@ -64,12 +64,9 @@
      <Compile Include="Assets\Scripts\ForwardKinematics\ArmJoinsInformation.cs" />
      <Compile Include="Assets\Scripts\ForwardKinematics\ForwardKinematics.cs" />
      <Compile Include="Assets\Scripts\InverseKinematics\Analytical\IK_Analytical.cs" />
-     <Compile Include="Assets\Scripts\InverseKinematics\Analytical\IK_Tom.cs" />
-     <Compile Include="Assets\Scripts\InverseKinematics\Analytical\IK_Tom_V2.cs" />
      <Compile Include="Assets\Scripts\InverseKinematics\Analytical\IK_Unreachable.cs" />
      <Compile Include="Assets\Scripts\InverseKinematics\Analytical\IK_Will_Straighten_if_unreacable.cs" />
      <Compile Include="Assets\Scripts\InverseKinematics\CCD\CCD.cs" />
-     <Compile Include="Assets\Scripts\InverseKinematics\CCD\CCDcompare.cs" />
      <Compile Include="Assets\Scripts\InverseKinematics\CCD\Joints.cs" />
      <Compile Include="Assets\Scripts\LocomotionLogic\2D\AttachEndEffectorToLimb.cs" />
      <Compile Include="Assets\Scripts\LocomotionLogic\2D\BlueFootStep.cs" />

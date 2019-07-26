@@ -64,6 +64,7 @@ public class FeetStep3D : MonoBehaviour
         }
     }
 
+    //gait locomotion phases - used as the logic cycle for driving the biped walk 
     void Step()
     {
         switch (footStates.footState)
@@ -109,6 +110,7 @@ public class FeetStep3D : MonoBehaviour
         }
     }
 
+    //positions control points of bezier curve to be followed
     void PositionBezierPoints()
     {
         Vector3 cp0Pos;
@@ -146,6 +148,7 @@ public class FeetStep3D : MonoBehaviour
     }
 
 
+    //uses inverted pendulum principle to move the hips forward over the support foot
     void PivotHipsAround()
     {
         Debug.Log(transform.name + " - IS PIVOTING SPINE");
@@ -166,9 +169,9 @@ public class FeetStep3D : MonoBehaviour
             if (groundHit.transform.name == "Ground")
             {
                 footCollisionPoint = groundHit.point;
+                Debug.Log("move fkn cube");
                 footcolposcube.transform.position = footCollisionPoint;
                 Debug.Log("raycast hit 'Ground'");
-                //Debug.DrawLine(transform.position, new Vector3(groundHit.point.x, groundHit.point.y - 1, groundHit.point.z), Color.white);
 
                 if (isGrounded == false)
                 {
